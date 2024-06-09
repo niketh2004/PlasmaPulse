@@ -1,0 +1,38 @@
+<!-- staff.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Staff Dashboard</title>
+    <link rel="stylesheet" href="staff.css">
+    <style>
+        /* Added transition styles */
+        .dashboard-section {
+            transition: transform 0.3s ease-in-out;
+        }
+        .dashboard-section:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Blood Donation Staff Dashboard</h1>
+            <button id="logout-button">Logout</button>
+        </header>
+        <main>
+            <section class="dashboard-section" id="manage-donations">
+                <!-- This link will open a new webpage for managing donations -->
+                <a href="manage_donations.html" target="_blank" class="button">Manage Donations</a>
+            </section>
+            <section class="dashboard-section" id="manage-donors">
+                <!-- This link will open a new webpage for managing donors -->
+                <a href="manage_donors.html" target="_blank" class="button">Manage Donors</a>
+            </section>
+        </main>
+    </div>
+    <script src="staff.js"></script>
+</body>
+</html>

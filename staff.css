@@ -1,0 +1,102 @@
+/* staff.css */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-geometric-gradient-creative-blood-donation-poster-background-material-image_134137.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin: 20px;
+    animation: fadeIn 0.5s ease-in-out; /* Fade in animation */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #800000; /* Dark red */
+}
+
+#logout-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ff0000; /* Red */
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#logout-button:hover {
+    background-color: #b30000; /* Darker red */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center main content vertically */
+    animation: slideIn 0.5s ease-in-out; /* Slide in animation */
+}
+
+.dashboard-section {
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #800000; /* Dark red */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    /* Centering styles */
+    margin: 0 auto; /* Center horizontally */
+    display: block; /* Convert to block element for margin auto to work */
+}
+
+.button:hover {
+    background-color: #b30000; /* Darker red */
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

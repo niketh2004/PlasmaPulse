@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/back_our/20190619/ourmid/pngtree-geometric-gradient-creative-blood-donation-poster-background-material-image_134137.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+}
+
+.login-form,
+.signup-form {
+    flex: 1;
+    padding: 20px;
+}
+
+.side-image {
+    flex: 1;
+}
+
+.side-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.signup-link,
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.signup-link a,
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.signup-link a:hover,
+.login-link a:hover {
+    color: #0056b3;
+}
+
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+#logout-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#logout-button:hover {
+    background-color: #c82333;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-section {
+    margin-bottom: 20px;
+}
+
+.dashboard-section h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}

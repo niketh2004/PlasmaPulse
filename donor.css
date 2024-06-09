@@ -1,0 +1,280 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2C3E50;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #ECF0F1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #34495E;
+    color: #fff;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+#logout-button {
+    background-color: #E74C3C;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.inventory-section {
+    margin-top: 20px;
+}
+
+#add-inventory-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#add-inventory-form label {
+    grid-column: 1 / 2;
+}
+
+#add-inventory-form input,
+#add-inventory-form button {
+    grid-column: 2 / 3;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#add-inventory-form button {
+    background-color: #3498DB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.inventory-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-section table, th, td {
+    border: 1px solid #BDC3C7;
+}
+
+.inventory-section th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2C3E50;
+    color: #fff;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex-grow: 1;
+    background-color: #ECF0F1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #34495E;
+    color: #fff;
+    padding: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+#logout-button {
+    background-color: #E74C3C;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.inventory-section {
+    margin-top: 20px;
+}
+
+#add-inventory-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#add-inventory-form label {
+    grid-column: 1 / 2;
+}
+
+#add-inventory-form input,
+#add-inventory-form button {
+    grid-column: 2 / 3;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#add-inventory-form button {
+    background-color: #3498DB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.inventory-section table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-section table, th, td {
+    border: 1px solid #BDC3C7;
+}
+
+.inventory-section th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}

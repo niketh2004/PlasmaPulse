@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plasma Pulse Blood Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-message {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="side-image">
+            <img src="https://media.istockphoto.com/id/1401899005/photo/friendly-hospital-phlebotomist-collecting-blood-sample-from-patient-in-lab-preparation-for.jpg?s=612x612&w=0&k=20&c=s2cKa10sW16RwTBkUWFF4OjG7rkPzylsESJhvtPbNZc=" alt="Phlebotomist collecting blood sample">
+        </div>
+        <div class="login-form">
+            <div class="logo">
+                <img id="logo-image" src="https://www.creativefabrica.com/wp-content/uploads/2022/05/10/PP-logo-design-vector-Graphics-30337940-1-580x386.jpg" alt="Plasma Pulse Logo">
+            </div>
+            <h1>Plasma Pulse</h1>
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role">
+                        <option value="donor">Donor</option>
+                        <option value="admin">Admin</option>
+                        <option value="hospital">Hospital</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+                <div class="error-message" id="error-message">Incorrect username or password</div>
+            </form>
+            <div class="signup-link">
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us">
+        <h2>Contact Us</h2>
+        <p>Email: info@plasmapulsebloodbank.com</p>
+        <p>Phone: +1 123-456-7890</p>
+        <p>Address: 123 Blood Donation Street, City, Country</p>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to Plasma Pulse Blood Bank, where we are dedicated to saving lives by ensuring an adequate blood supply for those in need. Our team consists of dedicated individuals:</p>
+        <ul>
+            <li>Satya</li>
+            <li>Thosik</li>
+            <li>Varun Teja</li>
+            <li>Niketh</li>
+            <li>Geethika</li>
+        </ul>
+        <p>We strive to keep our agenda of maintaining an online blood inventory to fulfill the needs of patients and healthcare providers.</p>
+    </section>
+
+    <script src="app.js"></script>
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Perform validation (This is just a placeholder, you would need to implement actual validation)
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "admin" && password === "admin") {
+                // Successful login
+                // You can redirect the user to another page or perform other actions here
+                alert("Login successful!");
+            } else {
+                // Failed login
+                // Show error message
+                document.getElementById("error-message").style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>

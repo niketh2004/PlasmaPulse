@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLASMA PULSE ADMIN</title>
+    <script src="admin.js" defer></script>
+    <button class="logo-button"></button>
+
+    <style>
+        /* Basic styles for the dashboard */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .dashboard-container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info span {
+            margin-right: 10px;
+        }
+
+        .user-info button {
+            padding: 5px 10px;
+        }
+
+        #blood-inventory {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .blood-type-box {
+            display: inline-block;
+            width: 150px;
+            padding: 15px;
+            margin: 10px;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        .blood-type-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .blood-type-box h3 {
+            margin: 0 0 10px;
+        }
+
+        .blood-type-box p {
+            margin: 5px 0;
+        }
+
+        .blood-type-AB- { background-color: #7f0000; }
+       
+        .blood-type-OPlus { background-color: #8adad2; }
+        .blood-type-O- { background-color: #c35feb; }
+        .blood-type-A+ { background-color: #ffebcc; }
+        .blood-type-A- { background-color: #1fc2d1; }
+        .blood-type-B+ { background-color: #6e4d0a; }
+        .blood-type-B- { background-color: #57770c; }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+
+        .popup.active {
+            display: flex;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .background-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                padding: 10px;
+            }
+            main {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2>Home</h2>
+            <ul>
+                <li><a href="#" onclick="showPopup('user-management')">User Management</a></li>
+                <li><a href="#" onclick="showPopup('inventory-management')">Inventory Management</a></li>
+                <li><a href="#" onclick="showPopup('donor-management')">Donor Management</a></li>
+                <li><a href="#" onclick="showPopup('appointment-management')">Appointment Management</a></li>
+                <li><a href="#" onclick="showPopup('reports-analytics')">Reports & Analytics</a></li>
+                <li><a href="#" onclick="showPopup('event-management')">Event Management</a></li>
+                <li><a href="#" onclick="showPopup('compliance')">Compliance & Documentation</a></li>
+                <li><a href="#" onclick="showPopup('feedback-support')">Feedback & Support</a></li>
+            </ul>
+        </div>
+        <main>
+            <header>
+                <h1>Admin Dashboard</h1>
+                <div class="user-info">
+                    <span>Welcome Admin</span>
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </header>
+            <div id="blood-inventory">
+                <div class="blood-type-box blood-type-AB-" onclick="updateInventory('AB-')">
+                    <h3>AB-</h3>
+                    <p>Total In: <span class="total-in">1000</span> ML</p>
+                    <p>Total Out: <span class="total-out">250</span> ML</p>
+                    <p>Total Available: <span class="total-available">750</span> ML</p>
+                </div>
+                
+               
+                <div class="blood-type-box blood-type-O-" onclick="updateInventory('O-')">
+                    <h3>O-</h3>
+                    <p>Total In: <span class="total-in">800</span> ML</p>
+                    <p>Total Out: <span class="total-out">300</span> ML</p>
+                    <p>Total Available: <span class="total-available">500</span> ML</p>
+                </div>
+                <div class="blood-type-box blood-type-OPlus" onclick="updateInventory('O+')">
+                    <h3>O+</h3>
+                    <p>Total In: <span class="total-in">2000</span> ML</p>
+                    <p>Total Out: <span class="total-out">1500</span> ML</p>
+                    <p>Total Available: <span class="total-available">500</span> ML</p>
+                </div>
+                
+                <div class="blood-type-box blood-type-A-" onclick="updateInventory('A-')">
+                    <h3>A-</h3>
+                    <p>Total In: <span class="total-in">500</span> ML</p>
+                    <p>Total Out: <span class="total-out">0</span> ML</p>
+                    <p>Total Available: <span class="total-available">500</span> ML</p>
+                </div>
+               
+                <div class="blood-type-box blood-type-B-" onclick="updateInventory('B-')">
+                    <h3>B-</h3>
+                    <p>Total In: <span class="total-in">1000</span> ML</p>
+                    <p>Total Out: <span class="total-out">1000</span> ML</p>
+                    <p>Total Available: <span class="total-available">0</span> ML</p>
+                </div>
+            </div>
+            <div class="background-image">
+                <img src="https://imgs.search.brave.com/KAj9YovcB6W-V1rpX7wC9YVHK-wcBVhhUbEixpEAJh4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/ZGlzYWJsZWQtd29y/bGQuY29tL3BpY3Mv/MS9jb21wYXRpYmxl/LWJsb29kLWRvbm9y/cy5wbmc" alt="Blood Compatibility">
+            </div>
+        </main>
+    </div>
+
+    <!-- Popups for Admin Options -->
+    <div id="user-management-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('user-management-popup')">&times;</span>
+            <h2>User Management</h2>
+            <p>Manage users here...</p>
+        </div>
+    </div>
+
+    <div id="inventory-management-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('inventory-management-popup')">&times;</span>
+            <h2>Inventory Management</h2>
+            <p>Manage inventory here...</p>
+        </div>
+    </div>
+
+    <div id="donor-management-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('donor-management-popup')">&times;</span>
+            <h2>Donor Management</h2>
+            <p>Manage donors here...</p>
+        </div>
+    </div>
+
+    <div id="appointment-management-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('appointment-management-popup')">&times;</span>
+            <h2>Appointment Management</h2>
+            <p>Manage appointments here...</p>
+        </div>
+    </div>
+
+    <div id="reports-analytics-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('reports-analytics-popup')">&times;</span>
+            <h2>Reports & Analytics</h2>
+            <p>View reports and analytics here...</p>
+        </div>
+    </div>
+
+    <div id="event-management-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('event-management-popup')">&times;</span>
+            <h2>Event Management</h2>
+            <p>Manage events here...</p>
+        </div>
+    </div>
+
+    <div id="compliance-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('compliance-popup')">&times;</span>
+            <h2>Compliance & Documentation</h2>
+            <p>Manage compliance and documentation here...</p>
+        </div>
+    </div>
+
+    <div id="feedback-support-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup('feedback-support-popup')">&times;</span>
+            <h2>Feedback & Support</h2>
+            <p>Manage feedback and support here...</p>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(popupId) {
+            document.getElementById(popupId + '-popup').classList.add('active');
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).classList.remove('active');
+        }
+
+        function logout() {
+            if (confirm("Are you sure you want to logout?")) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        function updateInventory(bloodType) {
+            alert(`Updating inventory for blood type: ${bloodType}`);
+            // Placeholder for AJAX/fetch API call to update inventory on the server
+        }
+    </script>
+</body>
+</html>

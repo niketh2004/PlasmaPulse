@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="donor.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2>Options</h2>
+            <ul>
+                <li><a href="#" onclick="showPopup('registration')">Online Donor Registration</a></li>
+                <li><a href="#" onclick="showPopup('scheduling')">Appointment Scheduling</a></li>
+                <li><a href="#" onclick="showPopup('criteria')">Donor Eligibility Criteria</a></li>
+                <li><a href="#" onclick="showPopup('faq')">FAQ Section</a></li>
+                <li><a href="#" onclick="showPopup('calendar')">Donation Events Calendar</a></li>
+                <li><a href="#" onclick="showPopup('rewards')">Donor Rewards Program</a></li>
+                <li><a href="#" onclick="showPopup('sharing')">Social Sharing Buttons</a></li>
+                <li><a href="#" onclick="showPopup('testimonials')">Testimonials and Success Stories</a></li>
+                <li><a href="#" onclick="showPopup('tips')">Blood Donation Tips</a></li>
+                <li><a href="#" onclick="showPopup('privacy')">Privacy Policy and Consent</a></li>
+                <li><a href="#" onclick="showPopup('emergency')">Emergency Contact Information</a></li>
+                <li><a href="#" onclick="showPopup('language')">Language Options</a></li>
+            </ul>
+        </div>
+        <main>
+            <header>
+                <h1>PLASMA PULSE</h1>
+                <div class="user-info">
+                    <span>Welcome donor</span>
+                    <button id="logout-button">Logout</button>
+                </div>
+            </header>
+            <section class="inventory-section">
+                <h2>Add Inventory</h2>
+                <form id="add-inventory-form">
+                    <label for="blood-group">Blood Group:</label>
+                    <input type="text" id="blood-group" name="blood-group" placeholder="e.g., A+, O-" required>
+                    <label for="inventory-type">Inventory Type:</label>
+                    <input type="text" id="inventory-type" name="inventory-type" placeholder="e.g., Whole Blood, Plasma" required>
+                    <label for="quantity">Quantity (units):</label>
+                    <input type="number" id="quantity" name="quantity" placeholder="e.g., 2" required>
+                    <label for="donor-email">Donor Email:</label>
+                    <input type="email" id="donor-email" name="donor-email" placeholder="e.g., donor@example.com" required>
+                    <label for="time-date">Time & Date:</label>
+                    <input type="datetime-local" id="time-date" name="time-date" required>
+                    <button type="submit">Add Inventory</button>
+                </form>
+                <h2>Inventory History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Blood Group</th>
+                            <th>Inventory Type</th>
+                            <th>Quantity</th>
+                            <th>Donor Email</th>
+                            <th>Time & Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventory-table">
+                        <!-- Inventory items will be added here dynamically -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <div id="popup-content"></div>
+        </div>
+    </div>
+
+    <script src="donor.js"></script>
+</body>
+</html>

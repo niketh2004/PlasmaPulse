@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Donations</title>
+    <link rel="stylesheet" href="manage_donations.css">
+    <style>
+        /* Additional styles specific to this page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            margin: 20px;
+            text-align: center;
+            overflow: hidden; /* Hide overflowing content */
+            animation: fadeIn 0.5s ease-in-out; /* Fade in animation */
+        }
+
+        h1 {
+            color: #800000; /* Dark red */
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            table-layout: fixed; /* Fix column width */
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s ease; /* Add transition effect */
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9; /* Highlight row on hover */
+        }
+
+        .back-button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Blue */
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Add transition effect */
+        }
+
+        .back-button:hover {
+            background-color: #0056b3; /* Darker blue */
+        }
+
+        /* Add scrolling effect */
+        tbody {
+            display: block;
+            max-height: 300px; /* Set maximum height */
+            overflow-y: auto; /* Enable vertical scrollbar */
+            transition: max-height 0.3s ease; /* Add transition effect */
+        }
+
+        tr {
+            display: table;
+            width: 100%;
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+
+        td {
+            width: 25%; /* Equal width for each column */
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://i.pinimg.com/564x/3c/20/a1/3c20a16bccae26d05a27243f9259b86e.jpg" alt="Blood Donation Image" style="max-width: 100%; border-radius: 8px;">
+        <h1>Manage Donations</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Donor</th>
+                    <th>Blood Type</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2024-06-15</td>
+                    <td>varun teja</td>
+                    <td>B-</td>
+                    <td>1 unit</td>
+                </tr>
+                <tr>
+                    <td>2024-06-16</td>
+                    <td>Thoshik</td>
+                    <td>AB+</td>
+                    <td>2 units</td>
+                </tr>
+                <tr>
+                    <td>2024-06-17</td>
+                    <td>Amogh</td>
+                    <td>O+</td>
+                    <td>1 unit</td>
+                </tr>
+                <tr>
+                    <td>2024-06-18</td>
+                    <td>surya</td>
+                    <td>A+</td>
+                    <td>3 units</td>
+                </tr>
+                <tr>
+                    <td>2024-06-19</td>
+                    <td>varsh</td>
+                    <td>AB-</td>
+                    <td>1 unit</td>
+                </tr>
+                <tr>
+                    <td>2024-06-20</td>
+                    <td>bhuvanesh</td>
+                    <td>B+</td>
+                    <td>2 units</td>
+                </tr>
+                <tr>
+                    <td>2024-06-21</td>
+                    <td>virat</td>
+                    <td>A-</td>
+                    <td>1 unit</td>
+                </tr>
+                <tr>
+                    <td>2024-06-22</td>
+                    <td>rohith</td>
+                    <td>O-</td>
+                    <td>2 units</td>
+                </tr>
+                <tr>
+                    <td>2024-06-23</td>
+                    <td>Rahul</td>
+                    <td>AB+</td>
+                    <td>1 unit</td>
+                </tr>
+                <tr>
+                    <td>2024-06-24</td>
+                    <td>suraj</td>
+                    <td>A+</td>
+                    <td>3 units</td>
+                </tr>                
+                <!-- Add more rows for donations -->
+            </tbody>
+        </table>
+        <a href="staff.html" class="back-button">Back to Staff Dashboard</a>
+    </div>
+</body>
+</html>
